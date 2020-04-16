@@ -1,4 +1,3 @@
-
 package com.example.placesofinterest
 
 import Place
@@ -18,12 +17,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         initViews()
     }
-
+    /**
+     *methode om start layout te initialiseren
+     *
+     */
     private fun initViews() {
         rvPlaces.layoutManager = StaggeredGridLayoutManager(2, LinearLayoutManager.VERTICAL)
         rvPlaces.adapter = placeAdapter
 
-        // Populate the places list and notify the data set has changed.
+        /**
+         * for loop om het places toe te voegen aan de lijst places
+         * ook laat weten dat dataset is gewijzigd
+         */
         for (i in Place.PLACE_NAMES.indices) {
             places.add(Place(Place.PLACE_NAMES[i], Place.PLACE_RES_DRAWABLE_IDS[i]))
         }

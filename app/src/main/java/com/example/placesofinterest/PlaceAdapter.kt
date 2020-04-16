@@ -8,7 +8,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_place.view.*
 
-public class  PlaceAdapter(private val places: List<Place>) :
+
+/**
+ *Class aangemaakt die in de constructor een variable heeft geinitialiseeerd Bestaande uit een
+ * lijst van de data class Place
+ *Hierin wordt de viewholder gekoppeld
+ */
+public class PlaceAdapter(private val places: List<Place>) :
     RecyclerView.Adapter<PlaceAdapter.ViewHolder>() {
 
     lateinit var context: Context
@@ -27,6 +33,9 @@ public class  PlaceAdapter(private val places: List<Place>) :
         holder.bind(places[position])
     }
 
+    /**
+     * inner class om  de image en naam te verbinden aan de imageview en textview
+     */
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(place : Place) {
             itemView.ivplace.setImageResource(place.imageResId)
